@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Team M045 senior project: AI-Assisted Well Log Prediction from Seismic Data."
+    />
+    <title>AI-Assisted Well Log Prediction from Seismic Data | Team M045</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Team M045 project home">
+        <span class="brand-mark" aria-hidden="true">M045</span>
+        <span>
+          <strong>AI Well Log Prediction</strong>
+          <small>Senior Project</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#workflow">Workflow</a>
+        <a href="#deliverables">Deliverables</a>
+        <a href="#disciplines">Team Logic</a>
+        <a href="#demo">Demo</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <canvas id="heroScene" class="hero-scene" aria-hidden="true"></canvas>
+        <div class="hero-shade" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <p class="eyebrow">Team M045 | Multidisciplinary Senior Project</p>
+          <h1 id="hero-title">AI-Assisted Well Log Prediction from Seismic Data</h1>
+          <p class="hero-copy">
+            A web-based workflow that connects seismic coverage with sparse well logs to
+            predict missing log curves, validate the results, and export interpretation-ready
+            outputs.
+          </p>
+
+          <div class="hero-actions" aria-label="Primary page actions">
+            <a class="button primary" href="#workflow">See How It Works</a>
+            <a class="button secondary" href="#demo">View Prediction Snapshot</a>
+          </div>
+        </div>
+
+        <div class="hero-metrics" aria-label="Project highlights">
+          <div>
+            <strong class="count-up" data-count="17">0</strong>
+            <span>prediction-ready wells</span>
+          </div>
+          <div>
+            <strong>SEG-Y</strong>
+            <span>seismic input</span>
+          </div>
+          <div>
+            <strong>LAS/CSV</strong>
+            <span>well-log input</span>
+          </div>
+          <div>
+            <strong>DT + GR</strong>
+            <span>trained curves</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section two-column" aria-labelledby="problem-title">
+        <div>
+          <p class="eyebrow dark">The Problem</p>
+          <h2 id="problem-title">Subsurface decisions need more than scattered logs.</h2>
+        </div>
+        <div class="text-stack">
+          <p>
+            Well logs give high-resolution rock and fluid measurements, but they exist only
+            where wells are drilled. Seismic data covers the field more widely, but it does
+            not directly measure reservoir properties.
+          </p>
+          <p>
+            Our project reduces that gap by learning the relationship between seismic
+            attributes and measured logs, then producing predicted curves with validation,
+            uncertainty awareness, and exportable results.
+          </p>
+        </div>
+      </section>
+
+      <section id="workflow" class="section workflow-section" aria-labelledby="workflow-title">
+        <div class="section-heading">
+          <p class="eyebrow dark">Interactive Workflow</p>
+          <h2 id="workflow-title">From raw field data to decision support.</h2>
+          <p>
+            Tap each stage to see what happens inside the prototype. The same logic powers
+            the web application: prepare, validate, run, review, and export.
+          </p>
+        </div>
+
+        <div class="workflow-layout">
+          <div class="workflow-steps" role="tablist" aria-label="Workflow stages">
+            <button class="step-button active" type="button" data-step="0" role="tab">
+              <span>01</span>
+              Ingest Data
+            </button>
+            <button class="step-button" type="button" data-step="1" role="tab">
+              <span>02</span>
+              Align & QC
+            </button>
+            <button class="step-button" type="button" data-step="2" role="tab">
+              <span>03</span>
+              Extract Features
+            </button>
+            <button class="step-button" type="button" data-step="3" role="tab">
+              <span>04</span>
+              Predict Logs
+            </button>
+            <button class="step-button" type="button" data-step="4" role="tab">
+              <span>05</span>
+              Review & Export
+            </button>
+          </div>
+
+          <article class="workflow-panel" aria-live="polite">
+            <div class="panel-kicker" id="workflowKicker">Stage 01</div>
+            <h3 id="workflowPanelTitle">Ingest seismic and well-log files</h3>
+            <p id="workflowPanelText">
+              The workflow accepts SEG-Y seismic volumes and LAS/CSV well logs, then organizes
+              them into a repeatable project structure.
+            </p>
+            <ul id="workflowPanelBullets">
+              <li>Project files, well headers, well tops, deviations, and checkshots</li>
+              <li>Upload validation before the model run starts</li>
+              <li>Prepared bundle for reproducible execution</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="deliverables" class="section deliverables-section" aria-labelledby="deliverables-title">
+        <div class="section-heading compact">
+          <p class="eyebrow dark">What Visitors Should Know</p>
+          <h2 id="deliverables-title">The prototype is more than a model.</h2>
+        </div>
+
+        <div class="deliverable-grid">
+          <article class="deliverable-card">
+            <span class="icon-ring">01</span>
+            <h3>Web Application</h3>
+            <p>Guided screens for project setup, file upload, run control, and result review.</p>
+          </article>
+          <article class="deliverable-card">
+            <span class="icon-ring">02</span>
+            <h3>ML Pipeline</h3>
+            <p>QC, time-depth alignment, seismic window features, model training, and inference.</p>
+          </article>
+          <article class="deliverable-card">
+            <span class="icon-ring">03</span>
+            <h3>Blind-Well Validation</h3>
+            <p>Testing by holding out entire wells to check generalization to unseen locations.</p>
+          </article>
+          <article class="deliverable-card">
+            <span class="icon-ring">04</span>
+            <h3>Exportable Outputs</h3>
+            <p>Predicted curves, metrics, plots, summaries, and files for interpretation workflows.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="disciplines" class="section disciplines-section" aria-labelledby="disciplines-title">
+        <div class="section-heading">
+          <p class="eyebrow dark">Multidisciplinary Design</p>
+          <h2 id="disciplines-title">Each discipline protects a different kind of truth.</h2>
+        </div>
+
+        <div class="discipline-tabs" role="tablist" aria-label="Discipline contributions">
+          <button class="tab-button active" type="button" data-tab="geophysics" role="tab">
+            Geophysics
+          </button>
+          <button class="tab-button" type="button" data-tab="petroleum" role="tab">
+            Petroleum Engineering
+          </button>
+          <button class="tab-button" type="button" data-tab="cs" role="tab">
+            CS & Software
+          </button>
+        </div>
+
+        <article class="discipline-panel" aria-live="polite">
+          <h3 id="disciplineTitle">Geophysics keeps the seismic signal reliable.</h3>
+          <p id="disciplineText">
+            The geophysics layer handles seismic QC, time-depth ties, conditioning, and windowed
+            attribute extraction so the model learns from meaningful seismic context.
+          </p>
+        </article>
+
+        <div class="team-grid" aria-label="Team members by discipline">
+          <article class="team-card">
+            <span>ICS</span>
+            <h3>Computer Science</h3>
+            <p>Mohammad Alamri</p>
+            <p>Mahdi Al Saleem</p>
+          </article>
+          <article class="team-card">
+            <span>PETE</span>
+            <h3>Petroleum Engineering</h3>
+            <p>Faisal Alahmadi</p>
+            <p>Anas Alghamdi</p>
+          </article>
+          <article class="team-card">
+            <span>GEOP</span>
+            <h3>Geophysics</h3>
+            <p>Mohammed Alamoudi</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="demo" class="section demo-section" aria-labelledby="demo-title">
+        <div class="demo-copy">
+          <p class="eyebrow dark">Prediction Snapshot</p>
+          <h2 id="demo-title">Measured vs. predicted curve behavior.</h2>
+          <p>
+            The page below uses an illustrative mini-chart to explain what visitors will see in
+            the real system: predicted log curves compared against measured blind-well data,
+            reviewed with metrics and reliability checks.
+          </p>
+
+          <div class="curve-controls" aria-label="Curve selector">
+            <button class="curve-button active" type="button" data-curve="dt">DT curve</button>
+            <button class="curve-button" type="button" data-curve="gr">GR curve</button>
+          </div>
+        </div>
+
+        <div class="chart-shell">
+          <canvas id="curveChart" width="720" height="420" aria-label="Illustrative prediction chart"></canvas>
+          <div class="chart-legend" aria-hidden="true">
+            <span><i class="legend measured"></i>Measured</span>
+            <span><i class="legend predicted"></i>Predicted</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section impact-section" aria-labelledby="impact-title">
+        <div class="section-heading compact">
+          <p class="eyebrow dark">Why It Matters</p>
+          <h2 id="impact-title">Faster early-stage reservoir understanding.</h2>
+        </div>
+
+        <div class="impact-grid">
+          <article>
+            <h3>Efficiency</h3>
+            <p>Automates repeated data preparation and comparison steps that slow manual workflows.</p>
+          </article>
+          <article>
+            <h3>Trust</h3>
+            <p>Uses blind-well validation, QC gates, and reliability indicators before results are used.</p>
+          </article>
+          <article>
+            <h3>Compatibility</h3>
+            <p>Exports practical files such as LAS, CSV, and GeoTIFF for common interpretation tools.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section closing-section" aria-labelledby="closing-title">
+        <div>
+          <p class="eyebrow">Expo Summary</p>
+          <h2 id="closing-title">In one sentence:</h2>
+          <p>
+            Team M045 built a practical AI workflow that turns seismic context and existing well
+            logs into validated, exportable predictions for missing subsurface log curves.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Team M045</span>
+      <span>AI-Assisted Well Log Prediction from Seismic Data</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
